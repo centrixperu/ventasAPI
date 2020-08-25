@@ -1,0 +1,193 @@
+﻿
+
+using Entidades.DTOModelos;
+using Entidades.Utils;
+using Entidades.Venta;
+using Logica.Venta;
+using Logica.FacturacionElectronica;
+using Microsoft.AspNet.Identity;
+using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
+using System.Web.Http;
+using System.Web.Http.Cors;
+using Entidades.DTOIntercambio;
+using Entidades.Venta.RegistroVenta;
+using Common;
+
+namespace WebApi.Controllers
+{
+    [AllowAnonymous]
+    [EnableCors(origins: "*", headers: "*", methods: "*")]
+    [RoutePrefix("api/Venta")]
+    public class VentaController : ApiController
+    {
+        [HostAuthentication(DefaultAuthenticationTypes.ExternalBearer)]
+        [Route("DatosIniciales")]
+        [HttpGet]
+        public IHttpActionResult GetDatosIniciales(string usuario, int idCliente)
+        {
+            try
+            {
+                VentaBL oVentaBL = new VentaBL(idCliente);
+                Venta_DatosInicialesBE obe = oVentaBL.ListarDatosIniciales(usuario, idCliente);
+
+                if (obe != null && (obe.loTienda != null && obe.loTienda.Count>1) &&  (obe.loEmisor != null && obe.loEmisor.Count == 1))
+                {
+                    return Ok(Models.Util.GetBodyResponse(200, obe));
+                }
+                else if (obe.loTienda == null || (obe.loTienda != null && obe.loTienda.Count == 1))
+                {
+                    return Ok(Models.Util.GetBodyResponse(300, "No se registraron Tiendas."));
+                }
+                else if (obe.loEmisor == null || (obe.loEmisor != null && obe.loEmisor.Count == 0))
+                {
+                    return Ok(Models.Util.GetBodyResponse(300, "No se encontró datos de Emisor Electrónico y/o Certificado Digital."));
+                }
+                else
+                {
+                    return Ok(Models.Util.GetBodyResponse(300, "No se encontraron registros."));
+                }
+            }
+            catch (Exception ex)
+            {
+                /*LogSA.GrabarLogError("SOL TR", user, "GetListarOrdOtrs", ex);*/
+                return Ok(Models.Util.GetBodyResponse(400, ex.Message));
+            }
+        }
+
+        [HostAuthentication(DefaultAuthenticationTypes.ExternalBearer)]
+        [Route("Productos")]
+        [HttpGet]
+        public IHttpActionResult GetProductos(string usuario, int idCliente, int idTienda)
+        {
+            try
+            {
+                VentaBL oVentaBL = new VentaBL(idCliente);
+                Venta_DatosInicialesBE obe = oVentaBL.ListarProductos(usuario, idCliente, idTienda);
+
+                if (obe != null && (obe.loProducto != null && obe.loProducto.Count > 0) && (obe.loComprobante != null && obe.loComprobante.Count > 1))
+                {
+                    return Ok(Models.Util.GetBodyResponse(200, obe));
+                }
+                else if (obe.loProducto == null || (obe.loProducto != null && obe.loProducto.Count == 0))
+                {
+                    return Ok(Models.Util.GetBodyResponse(300, "No se encontraron Productos registrados en la Tienda seleccionada."));
+                }
+                else if (obe.loComprobante == null || (obe.loComprobante != null && obe.loComprobante.Count == 1))
+                {
+                    return Ok(Models.Util.GetBodyResponse(300, "No se encontró Tipo de Documento para la Tienda seleccionada."));
+                }
+                else
+                {
+                    return Ok(Models.Util.GetBodyResponse(300, "No se encontraron registros."));
+                }
+            }
+            catch (Exception ex)
+            {
+                /*LogSA.GrabarLogError("SOL TR", user, "GetListarOrdOtrs", ex);*/
+                return Ok(Models.Util.GetBodyResponse(400, ex.Message));
+            }
+        }
+
+        [HostAuthentication(DefaultAuthenticationTypes.ExternalBearer)]
+        [Route("ListarImagenProducto")]
+        [HttpGet]
+        public IHttpActionResult GetListarImagenProducto(string usuario, int idCliente, int idProducto)
+        {
+            try
+            {
+                VentaBL oVentaBL = new VentaBL(idCliente);
+                List<ListaArchivosAdjuntos> obe = oVentaBL.ListarImagenProducto(usuario, idProducto);
+
+                if (obe != null && obe.Count > 0)
+                {
+                    return Ok(Models.Util.GetBodyResponse(200, obe));
+                }
+                else
+                {
+                    return Ok(Models.Util.GetBodyResponse(300, "No se encontraron registros."));
+                }
+            }
+            catch (Exception ex)
+            {
+                /*LogSA.GrabarLogError("SOL TR", user, "GetListarOrdOtrs", ex);*/
+                return Ok(Models.Util.GetBodyResponse(400, ex.Message));
+            }
+        }
+
+        [Route("Guardar")]
+        [HttpPost]
+        public async Task<IHttpActionResult> Guardar(VentaBE obe)
+        {
+        	EDEDocumentoElectronico objEDEDocumentoElectronicoResponse;
+            EDEEnviarDocumentoResponse objEDERespuesta;
+            FacturacionElectronicaBL oFacturaElectronicaBL = new FacturacionElectronicaBL();
+            try
+            {
+                VentaBL oVentaBL = new VentaBL(obe.IdCliente);
+				//FacturacionElectronicaBL oFacturaElectronicaBL = new FacturacionElectronicaBL();
+                RespuestaBE rpta = new RespuestaBE();
+                string msg = "";
+                rpta = oVentaBL.Guardar(obe, out msg);
+
+                if (rpta.codigo==2)
+                {
+					/*//Generar Estructura Facturacion electronica
+                    objEDEDocumentoElectronicoResponse = oFacturaElectronicaBL.GenerarEstructuraBoletaFactura(obe);
+                    //Procesar Facturacion electronica
+                    objEDERespuesta = oFacturaElectronicaBL.ProcesarBoletaFactura(objEDEDocumentoElectronicoResponse);
+                    //Actualizar respuesta
+                    ActualizarRespuesta(objEDERespuesta);*/
+                    return Ok(Models.Util.GetBodyResponse(200, rpta.descripcion));
+                }
+                else if (rpta.codigo == 1)
+                {
+                    return Ok(Models.Util.GetBodyResponse(200, rpta.descripcion));
+                }
+                else
+                {
+                    return Ok(Models.Util.GetBodyResponse(300, msg));
+                }
+            }
+            catch (Exception ex)
+            {
+                //LogSA.GrabarLogError("SOL TR", model.user, "EditarTareas", ex);
+                return Ok(Models.Util.GetBodyResponse(400, ex.Message));
+            }
+        }
+
+		private void ActualizarRespuesta(EDEEnviarDocumentoResponse objEDERespuesta)
+        {
+            //objEDetalleVentaRespuesta = new EDetalleVenta();
+            //lstEDetalleVentaRespuesta = new List<EDetalleVenta>();
+        }
+
+        [HostAuthentication(DefaultAuthenticationTypes.ExternalBearer)]
+        [Route("RegistroVentas")]
+        [HttpGet]
+        public IHttpActionResult GetRegistroVentas(string usuario, int idCliente, bool isDia, bool isMes, bool isAnio, bool isRango,
+                                                    string fechaInicio, string fechaFin)
+        {
+            try
+            {
+                VentaBL oVentaBL = new VentaBL(idCliente);
+                RegistroVentaBE obe = oVentaBL.RegistroVentas(usuario, idCliente, isDia, isMes, isAnio, isRango, fechaInicio, fechaFin);
+
+                if (obe != null && (obe.listado != null && obe.listado.Count > 0))
+                {
+                    return Ok(Models.Util.GetBodyResponse(200, obe));
+                }
+                else
+                {
+                    return Ok(Models.Util.GetBodyResponse(300, "No se encontraron registros."));
+                }
+            }
+            catch (Exception ex)
+            {
+                /*LogSA.GrabarLogError("SOL TR", user, "GetListarOrdOtrs", ex);*/
+                return Ok(Models.Util.GetBodyResponse(400, ex.Message));
+            }
+        }
+    }
+}

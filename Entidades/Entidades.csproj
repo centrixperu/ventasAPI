@@ -1,0 +1,194 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C88842E7-B8C1-4112-811D-40973D0B54B1}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Entidades</RootNamespace>
+    <AssemblyName>Entidades</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Ajustes\AlmacenXTienda\AlmacenXTiendaExportBE.cs" />
+    <Compile Include="Ajustes\Color\ColorBE.cs" />
+    <Compile Include="Ajustes\Color\ColorExportBE.cs" />
+    <Compile Include="Ajustes\Color\Color_DatosInicialesBE.cs" />
+    <Compile Include="Ajustes\ComprobanteXCliente\ComprobanteXClienteBE.cs" />
+    <Compile Include="Ajustes\ComprobanteXCliente\ComprobanteXCliente_DatosInicialesBE.cs" />
+    <Compile Include="Ajustes\ComprobanteXTienda\ComprobanteXTiendaExportBE.cs" />
+    <Compile Include="Ajustes\Producto_GrupoMedico\ProductoGrupoMedicoBE.cs" />
+    <Compile Include="Ajustes\Producto_GrupoMedico\ProductoGrupoMedico_DatosInicialesBE.cs" />
+    <Compile Include="Ajustes\Producto_Laboratorio\ProductoLaboratorioBE.cs" />
+    <Compile Include="Ajustes\Producto_Laboratorio\ProductoLaboratorio_DatosInicialesBE.cs" />
+    <Compile Include="Ajustes\Producto_TipoPresentacion\ProductoTipoPresentacionBE.cs" />
+    <Compile Include="Ajustes\Producto_TipoPresentacion\ProductoTipoPresentacion_DatosInicialesBE.cs" />
+    <Compile Include="Ajustes\Talla\TallaBE.cs" />
+    <Compile Include="Ajustes\Talla\TallaExportBE.cs" />
+    <Compile Include="Ajustes\Talla\Talla_DatosInicialesBE.cs" />
+    <Compile Include="Ajustes\Tienda\TiendaExportBE.cs" />
+    <Compile Include="Almacen\AdministrarProducto\AdministrarProductoBE.cs" />
+    <Compile Include="Almacen\AdministrarProducto\AdministrarProductoExportBE.cs" />
+    <Compile Include="Almacen\AdministrarProducto\AdministrarProducto_DatosInicialesBE.cs" />
+    <Compile Include="Ajustes\Almacen\AlmacenBE.cs" />
+    <Compile Include="Ajustes\AlmacenXTienda\AlmacenXTiendaBE.cs" />
+    <Compile Include="Ajustes\AlmacenXTienda\AlmacenXTienda_DatosInicialesBE.cs" />
+    <Compile Include="Ajustes\Almacen\Almacen_DatosInicialesBE.cs" />
+    <Compile Include="Ajustes\Cliente\ClienteBE.cs" />
+    <Compile Include="Ajustes\Cliente\Cliente_DatosInicialesBE.cs" />
+    <Compile Include="Ajustes\Comprobante\ComprobanteBE.cs" />
+    <Compile Include="Ajustes\ComprobanteXTienda\ComprobanteXTiendaBE.cs" />
+    <Compile Include="Ajustes\ComprobanteXTienda\ComprobanteXTienda_DatosInicialesBE.cs" />
+    <Compile Include="Ajustes\Comprobante\Comprobante_DatosInicialesBE.cs" />
+    <Compile Include="Ajustes\Emisor\EmisorBE.cs" />
+    <Compile Include="Ajustes\Emisor\Emisor_DatosInicialesBE.cs" />
+    <Compile Include="Ajustes\ModuloXCliente\ModuloXClienteBE.cs" />
+    <Compile Include="Ajustes\ModuloXCliente\ModuloXCliente_DatosInicialesBE.cs" />
+    <Compile Include="Ajustes\Perfil\PerfilBE.cs" />
+    <Compile Include="Ajustes\Perfil\Perfil_DatosInicialesBE.cs" />
+    <Compile Include="Ajustes\Tienda\TiendaBE.cs" />
+    <Compile Include="Ajustes\Tienda\Tienda_DatosInicialesBE.cs" />
+    <Compile Include="Ajustes\Usuario\UsuarioBE.cs" />
+    <Compile Include="Ajustes\Usuario\Usuario_DatosInicialesBE.cs" />
+    <Compile Include="Almacen\AsignarAlmacen\AsignarAlmacenBE.cs" />
+    <Compile Include="Almacen\AsignarAlmacen\AsignarAlmacen_DatosInicialesBE.cs" />
+    <Compile Include="Almacen\AsignarAlmacen\AsignarAlmacen_ProductoBE.cs" />
+    <Compile Include="Almacen\CodigoBarras\CodigoBarrasBE.cs" />
+    <Compile Include="Almacen\CodigoBarras\CodigoBarras_DatosInicialesBE.cs" />
+    <Compile Include="ArchivosAdjuntos\ImprimirComprobanteBE.cs" />
+    <Compile Include="ControlStock\ControlStockBEReporte.cs" />
+    <Compile Include="ControlStock\ControlStockBE.cs" />
+    <Compile Include="ControlStock\ControlStockGBE.cs" />
+    <Compile Include="DashBoard\DashBoardBE.cs" />
+    <Compile Include="DashBoard\DashBoard_DatosInicialesBE.cs" />
+    <Compile Include="Devolver\Devolver_DatosInicialesBE.cs" />
+    <Compile Include="DTOIntercambio\EDECommonRequest.cs" />
+    <Compile Include="DTOIntercambio\EDEDocumentoResponse.cs" />
+    <Compile Include="DTOIntercambio\EDEEnviarDocumentoRequest.cs" />
+    <Compile Include="DTOIntercambio\EDEEnviarDocumentoResponse.cs" />
+    <Compile Include="DTOIntercambio\EDEEnvioDocumentoComun.cs" />
+    <Compile Include="DTOIntercambio\EDEFirmadoRequest.cs" />
+    <Compile Include="DTOIntercambio\EDEFirmadoResponse.cs" />
+    <Compile Include="DTOIntercambio\EDEPaqueteResponse.cs" />
+    <Compile Include="DTOIntercambio\EDERespuestaComun.cs" />
+    <Compile Include="DTOIntercambio\EDERespuestaComunConArchivo.cs" />
+    <Compile Include="DTOModelos\EDECompania.cs" />
+    <Compile Include="DTOModelos\EDEComunicacionBaja.cs" />
+    <Compile Include="DTOModelos\EDEConfigParameter.cs" />
+    <Compile Include="DTOModelos\EDEContribuyente.cs" />
+    <Compile Include="DTOModelos\EDEDatoAdicional.cs" />
+    <Compile Include="DTOModelos\EDEDatosGuia.cs" />
+    <Compile Include="DTOModelos\EDEDetalleDocumento.cs" />
+    <Compile Include="DTOModelos\EDEDiscrepancia.cs" />
+    <Compile Include="DTOModelos\EDEDocumento.cs" />
+    <Compile Include="DTOModelos\EDEDocumentoAnulado.cs" />
+    <Compile Include="DTOModelos\EDEDocumentoBaja.cs" />
+    <Compile Include="DTOModelos\EDEDocumentoElectronico.cs" />
+    <Compile Include="DTOModelos\EDEDocumentoRelacionado.cs" />
+    <Compile Include="DTOModelos\EDEDocumentoResumen.cs" />
+    <Compile Include="DTOModelos\EDEDocumentoResumenDetalle.cs" />
+    <Compile Include="DTOModelos\EDEGrupoResumen.cs" />
+    <Compile Include="DTOModelos\EDEGrupoResumenNuevo.cs" />
+    <Compile Include="DTOModelos\EDELeyenda.cs" />
+    <Compile Include="DTOModelos\EDENegocio.cs" />
+    <Compile Include="DTOModelos\EDEResumenDiarioNuevo.cs" />
+    <Compile Include="Login\DetalleInfoBE.cs" />
+    <Compile Include="Login\LoginBE.cs" />
+    <Compile Include="Login\MenuBE.cs" />
+    <Compile Include="Login\MenuDetalleBE.cs" />
+    <Compile Include="Maestro\beSerialize.cs" />
+    <Compile Include="Maestro\ConsultaDocumentoBE.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReporteCaja\CajaBE.cs" />
+    <Compile Include="ReporteCaja\ReporteCajaBE.cs" />
+    <Compile Include="ReporteClienteTienda\GuiasTienda\GuiaTiendaBE.cs" />
+    <Compile Include="ReporteClienteTienda\GuiasTienda\ReporteGuiaTiendaBE.cs" />
+    <Compile Include="ReporteClienteTienda\GuiasTienda\ReporteGuiaTienda_DetalleBE.cs" />
+    <Compile Include="ReporteClienteTienda\KardexPrecioTienda\KardexPrecioTiendaBE.cs" />
+    <Compile Include="ReporteClienteTienda\KardexPrecioTienda\ReporteKardexPrecioTiendaBE.cs" />
+    <Compile Include="ReporteClienteTienda\KardexProductoTienda\KardexProductoTiendaBE.cs" />
+    <Compile Include="ReporteClienteTienda\KardexProductoTienda\ReporteKardexProductoTiendaBE.cs" />
+    <Compile Include="ReporteClienteTienda\RegistroVentaTienda\ReporteVentaTiendaBE.cs" />
+    <Compile Include="ReporteClienteTienda\RegistroVentaTienda\VentaTiendaBE.cs" />
+    <Compile Include="ReporteClienteTienda\ReporteClienteTienda_DatosInicialesBE.cs" />
+    <Compile Include="ReporteClienteTienda\VentaPrecioTienda\ReporteVentaPrecioTiendaBE.cs" />
+    <Compile Include="ReporteClienteTienda\VentaPrecioTienda\VentaPrecioTiendaBE.cs" />
+    <Compile Include="ReporteClienteTienda\VentaProductoTienda\ReporteVentaProductoTiendaBE.cs" />
+    <Compile Include="ReporteClienteTienda\VentaProductoTienda\VentaProductoTiendaBE.cs" />
+    <Compile Include="ReporteCliente\Guias\GuiaBE.cs" />
+    <Compile Include="ReporteCliente\Guias\ReporteGuia_DetalleBE.cs" />
+    <Compile Include="ReporteCliente\KardexPrecio\KardexPrecioBE.cs" />
+    <Compile Include="ReporteCliente\KardexPrecio\ReporteKardexPrecioBE.cs" />
+    <Compile Include="ReporteCliente\KardexProducto\KardexProductoBE.cs" />
+    <Compile Include="ReporteCliente\KardexProducto\ReporteKardexProductoBE.cs" />
+    <Compile Include="ReporteCliente\Guias\ReporteGuiaBE.cs" />
+    <Compile Include="ReporteCliente\VentaPrecio\ReporteVentaPrecioBE.cs" />
+    <Compile Include="ReporteCliente\VentaPrecio\VentaPrecioBE.cs" />
+    <Compile Include="ReporteCliente\VentaProducto\ReporteVentaProductoBE.cs" />
+    <Compile Include="ReporteCliente\VentaProducto\VentaProductoBE.cs" />
+    <Compile Include="ReporteCodigoBarra\CodigoBarraBE.cs" />
+    <Compile Include="ReporteCodigoBarra\CodigoBarraReportBE.cs" />
+    <Compile Include="Traspaso\Traspaso_DatosInicialesBE.cs" />
+    <Compile Include="Utils\ListaArchivosAdjuntos.cs" />
+    <Compile Include="Utils\ListaComboBE.cs" />
+    <Compile Include="Utils\ListaComboDetallado.cs" />
+    <Compile Include="Utils\ListaComboTextBE.cs" />
+    <Compile Include="Utils\ListaCorrelativoVentaBE.cs" />
+    <Compile Include="Utils\ReporteColumnas.cs" />
+    <Compile Include="Utils\RespuestaBE.cs" />
+    <Compile Include="Venta\ListadoVenta\ListadoVentaBE.cs" />
+    <Compile Include="Venta\ListadoVenta\ReporteListadoVentaBE.cs" />
+    <Compile Include="Venta\ListadoVenta\ReporteListadoVentaExcelBE.cs" />
+    <Compile Include="Venta\RegistroVenta\RegistroVentaBE.cs" />
+    <Compile Include="Venta\RegistroVenta\RegistroVentaDetalleBE.cs" />
+    <Compile Include="Venta\RegistroVenta\ReporteRegistroVentaBE.cs" />
+    <Compile Include="Venta\RegistroVenta\ReporteRegistroVentaExcelBE.cs" />
+    <Compile Include="Venta\VentaBE.cs" />
+    <Compile Include="Venta\VentaDetalleBE.cs" />
+    <Compile Include="Venta\Venta_DatosInicialesBE.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

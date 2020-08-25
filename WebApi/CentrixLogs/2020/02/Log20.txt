@@ -1,0 +1,8 @@
+01:28:19 p.m.-Inicio proceso Facturacion Electronica Boletas y Facturas
+01:28:26 p.m.-ERROR ====> Se ha generado el siguiente error: String was not recognized as a valid DateTime.
+01:31:27 p.m.-Inicio proceso Facturacion Electronica Boletas y Facturas
+01:32:52 p.m.-ERROR ====> Se ha generado el siguiente error: String was not recognized as a valid DateTime.
+01:34:09 p.m.-Inicio proceso Facturacion Electronica Boletas y Facturas
+01:34:45 p.m.-No existen registros para actualizar.
+01:37:58 p.m.-Inicio proceso Facturacion Electronica Boletas y Facturas
+01:38:05 p.m.-No existen registros para actualizar.

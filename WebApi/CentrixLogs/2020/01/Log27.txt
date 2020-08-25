@@ -1,0 +1,5 @@
+12:17:14 p.m.-Inicio proceso Facturacion Electronica Boletas y Facturas
+12:17:30 p.m.-ERROR ====> Se ha generado el siguiente error: Client.3103El producto del factor y monto base de la afectación del IGV/IVAP no corresponde al monto de afectacion de linea. - Detalle: xxx.xxx.xxx value='ticket: 1580145440859 error: Error en la linea: 1 Tributo: 1000, MontoTributoCalculado: 18.18, MontoTributo: 15.41, BaseImponible: 101.00, Tasa: 18.00: 3103 (nodo: "cac:TaxSubtotal/cbc:TaxAmount" valor: "15.41")'
+06:27:43 p.m.-Inicio proceso Facturacion Electronica Nota de Crédito
+06:56:19 p.m.-Inicio proceso Facturacion Electronica Nota de Crédito
+07:11:02 p.m.-ERROR ====> Se ha generado el siguiente error: Client.3103El producto del factor y monto base de la afectación del IGV/IVAP no corresponde al monto de afectacion de linea. - Detalle: xxx.xxx.xxx value='ticket: 1580169396361 error: Error en la linea: 48 Tributo: 1000: 3103 (nodo: "cac:TaxSubtotal/cbc:TaxAmount" valor: "15.41")'

@@ -1,0 +1,18 @@
+05:14:16-Inicio proceso Facturacion Electronica Boletas y Facturas
+05:21:58-Inicio proceso Facturacion Electronica Boletas y Facturas
+05:30:10-Inicio proceso Facturacion Electronica Boletas y Facturas
+05:32:45-Inicio proceso Facturacion Electronica Boletas y Facturas
+05:33:07-No existen registros para actualizar
+07:05:48-Inicio proceso Facturacion Electronica Boletas y Facturas
+07:09:41-Inicio proceso Facturacion Electronica Boletas y Facturas
+07:13:35-Inicio proceso Facturacion Electronica Boletas y Facturas
+07:16:21-Inicio proceso Facturacion Electronica Boletas y Facturas
+03:44:13 p.m.-Inicio proceso Facturacion Electronica Boletas y Facturas
+03:52:57 p.m.-Inicio proceso Facturacion Electronica Boletas y Facturas
+03:53:55 p.m.-Inicio proceso Facturacion Electronica Boletas y Facturas
+04:02:30 p.m.-ERROR ====> Se ha generado el siguiente error: Client.1034Número de RUC del nombre del archivo no coincide con el consignado en el contenido del archivo XML - Detalle: xxx.xxx.xxx value='ticket: 1579726469037 error: INFO : 1034 (nodo: "cac:PartyIdentification/cbc:ID" valor: "20987654328")'
+04:39:49 p.m.-Inicio proceso Facturacion Electronica Boletas y Facturas
+05:08:44 p.m.-Inicio proceso Facturacion Electronica Boletas y Facturas
+05:20:27 p.m.-Inicio proceso Facturacion Electronica Boletas y Facturas
+06:05:02 p.m.-Inicio proceso Facturacion Electronica Boletas y Facturas
+06:08:43 p.m.-No existen registros para actualizar.

@@ -1,0 +1,6 @@
+09:33:58 p.m.-Inicio proceso Facturacion Electronica Boletas y Facturas
+09:34:59 p.m.-No existen registros para actualizar.
+09:39:26 p.m.-Inicio proceso Facturacion Electronica Boletas y Facturas
+10:07:49 p.m.-ERROR ====> Se ha generado el siguiente error: Client.3111El monto de afectación de IGV por linea debe ser diferente a 0.00. - Detalle: xxx.xxx.xxx value='ticket: 1579920017155 error: Error en la linea: 1 Tributo: 1000: 3111 (nodo: "cac:TaxSubtotal/cbc:TaxAmount" valor: "0.00")'
+10:16:42 p.m.-Inicio proceso Facturacion Electronica Boletas y Facturas
+10:16:50 p.m.-No existen registros para actualizar.
